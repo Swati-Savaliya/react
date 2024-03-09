@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card, CardBody, CardSubtitle, CardText, CardTitle } from 'reactstrap';
 
-function Product4(props) {
+function Products4(props) {
     const [productData, setProduct] = useState([])
     const [search, setSearch] = useState("")
     const [sort, setSort] = useState("")
@@ -54,7 +54,6 @@ function Product4(props) {
                 return b.title.localeCompare(a.title);
             }
         });
-
 
         if(selecetCategory) {
             availableItem = availableItem.filter((v) => v.category === selecetCategory)
@@ -139,4 +138,4 @@ function Product4(props) {
         </div >
     );
 }
-export default Product4;
+export default Products4;

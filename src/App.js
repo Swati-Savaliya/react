@@ -16,7 +16,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import Product2 from './user/container/Product/Product2';
 // import Product3 from './user/container/Product/Product3';
-import Product4 from './user/container/Product/Products4';
+// import Products4 from './user/container/Product/Products4';
 import Product5 from './user/container/Product/Product5';
 
 
@@ -41,10 +41,9 @@ function App() {
   {/* <Products1 /> */}
   {/* <Product2 /> */}
   {/* <Product3 /> */}
-  {/* <Product4 /> */}
-  <Product5 /> 
-
-  
+  {/* <Products4 /> */}
+  <Product5 />
+   
   </>
   );
 }
