@@ -21,8 +21,10 @@ function Product4(props) {
         console.log(data);
         setProduct(data);
 
+
+
         let selectcate = [];
-        data.map((v)=>{
+        data.map((v)=> {
             if(!selectcate.includes(v.category)){
                 (selectcate.push(v.category))
             }
@@ -66,9 +68,11 @@ function Product4(props) {
     console.log(finalData);
 
     return (
+
+ 
         <div className='container' style={{
             backgroundColor:'pink'
-        }} >
+        }}>
             <div className='row '>
                 <h2 className='text-center' >Products  Data</h2>
                 <div className='mb-3 text-center'>
@@ -96,14 +100,9 @@ function Product4(props) {
                         category.map((v) =>(
                             <button style= {{background: v === selecetCategory ? "orange" : "white" }} onClick={() => setselecetCategory(v)}> {v} </button>
                         ))
-                    }
-
-                            
+                    }      
                 </div>
-
-
                 {
-
                     finalData.map((v, i) => (
                         <div className='col-md-4 gy-5 '>
 
@@ -138,7 +137,6 @@ function Product4(props) {
                 }
             </div>
         </div >
-
     );
 }
 export default Product4;

@@ -2,11 +2,6 @@
 // import './App.css';
 
 // import Products1 from './user/container/Product/Product1';
-
-
-
-
-
 // import TimerClass from "./user/container/Timer/TimerClass";
 // import Timerfun from "./user/container/Timer/Timerfun";
 
@@ -19,9 +14,11 @@
 // import Unmount from './user/method/Unmount';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Product4 from './user/container/Product/Products4';
 // import Product2 from './user/container/Product/Product2';
 // import Product3 from './user/container/Product/Product3';
+import Product4 from './user/container/Product/Products4';
+import Product5 from './user/container/Product/Product5';
+
 
 function App() {
   return (
@@ -44,7 +41,8 @@ function App() {
   {/* <Products1 /> */}
   {/* <Product2 /> */}
   {/* <Product3 /> */}
-  <Product4 />
+  {/* <Product4 /> */}
+  <Product5 /> 
 
   
   </>
