@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Card, CardBody, CardSubtitle, CardText, CardTitle } from 'reactstrap';
+import { Button, Card, CardBody, CardSubtitle, CardText, CardTitle, Spinner } from 'reactstrap';
 
 function Product5(props) {
     const [productData, setProduct] = useState([]);
@@ -15,12 +15,12 @@ function Product5(props) {
     }, []);
 
     const getData = async () => {
-        // spinners
-        setLoading(true);
-        try {
+        // // spinners
+        // setLoading(true);
+        // try {
             const response = await fetch('https://fakestoreapi.com/products');
             const data = await response.json();
-            setProduct(data);
+            
 
             let selectCate = [];
             data.forEach((v) => {
@@ -28,12 +28,16 @@ function Product5(props) {
                     selectCate.push(v.category);
                 }
             });
-            setCategory(selectCate);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        } finally {
-            setLoading(false);
-        }
+
+           setLoading (false);     
+            setProduct(data);
+
+        //     setCategory(selectCate);
+        // } catch (error) {
+        //     console.error('Error fetching data:', error);
+        // } finally {
+        //     setLoading(false);
+        // }
     };
 
     const handleFind = () => {
@@ -65,8 +69,16 @@ function Product5(props) {
     const finalData = handleFind();
 
     return (
-        <div className='container' style={{ backgroundColor: 'pink' }}>
-            <div className='row '>
+        // <div className='container' style={{ backgroundColor: 'pink' }}>
+        <div className='container'>
+            {
+                isLoading ? 
+                
+                <p> <Spinner>
+                Loading...
+              </Spinner> </p> : 
+              
+                <div className='row '>
                 <h2 className='text-center'>Products Data</h2>
                 <div className='mb-3 text-center'>
                     <input
@@ -92,13 +104,15 @@ function Product5(props) {
                     ))}
                 </div>
 
-                {isLoading ? (
-                    <div className="text-center" style={{ marginTop: '20px' }}>
-                        <div className="spinner-border text-primary" role="status" style={{ width: '3rem', height: '3rem' }}>
-                            <span className="visually-hidden">Loading...</span>
-                        </div>
-                    </div>
-                ) : (
+                {
+                // isLoading ? (
+                    // <div className="text-center" style={{ marginTop: '20px' }}>
+                    //     <div className="spinner-border text-primary" role="status" style={{ width: '3rem', height: '3rem' }}>
+                    //         <span className="visually-hidden">Loading...</span>
+                    //     </div>
+                    // </div>
+                // ) : (
+                    
                     finalData.map((v, i) => (
                         <div className='col-md-4 gy-5' key={i}>
                             <Card style={{ width: '18rem' }}>
@@ -112,8 +126,10 @@ function Product5(props) {
                             </Card>
                         </div>
                     ))
-                )}
+                }
             </div>
+            }
+           
         </div>
     );
 }

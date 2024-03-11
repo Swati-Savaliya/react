@@ -7,7 +7,8 @@ function Products4(props) {
     const [sort, setSort] = useState("")
     let [category, setCategory] = useState([])
     const [selecetCategory, setselecetCategory] = useState('')
-    
+    // spinners
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         getData();
@@ -18,6 +19,8 @@ function Products4(props) {
         const response = await fetch('https://fakestoreapi.com/products')
         const data = await response.json()
 
+        // spinners
+        setLoading(false);
         console.log(data);
         setProduct(data);
 
@@ -68,11 +71,14 @@ function Products4(props) {
 
     return (
 
- 
         <div className='container' style={{
             backgroundColor:'pink'
         }}>
-            <div className='row '>
+            {
+                loading ? 
+                
+                <p>Loading .... </p> :
+                <div className='row '>
                 <h2 className='text-center' >Products  Data</h2>
                 <div className='mb-3 text-center'>
                     <input type='search'
@@ -135,6 +141,9 @@ function Products4(props) {
                     ))
                 }
             </div>
+
+            }
+           
         </div >
     );
 }

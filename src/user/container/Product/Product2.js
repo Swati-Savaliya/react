@@ -19,7 +19,7 @@ const [productsData, setProductsData] = useState([]);
 //   return describe.filter((category,index)=> describe.indexOf(category) === index)
 
 
-  
+
 //  const category = [
 //     { category: "men's clothing" },
 //     { category: "jewelery" },
