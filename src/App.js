@@ -9,12 +9,16 @@ import { Route, Routes } from 'react-router-dom';
 import Contact from './user/container/Contact/Contact';
 import Product5 from './user/container/Product/Product5';
 import Home from './user/container/Home/Home';
+import FinalProduct from './user/container/Product/FinalProduct';
 
 
 
 function App() {
   return (
   <>
+
+  <FinalProduct/>
+  
       <Header />
       <Routes>
           <Route exact path="/" element={<Home />} />
