@@ -1,8 +1,8 @@
-import { Route, Routes } from "react-router-dom";
+import React from "react";
+// import { Route, Routes } from "react-router-dom";
+import { Provider } from "react-redux";
 import Counter from "./user/Counter/Counter";
-
-
-
+import { configstore } from "./Redux/store";
 
 // import Home from "./user/Dom/Nested/Pages/Home";
 // import About from "./user/Dom/Nested/Pages/About";
@@ -11,9 +11,16 @@ import Counter from "./user/Counter/Counter";
 
 
 function App() {
+    const store = configstore()
+
   return (
   <>    
-     <Counter />
+        <Provider store={store}>
+            <Counter />
+        </Provider>
+
+     {/* <Counter /> */}
+     
       {/* <Header />
       <Routes>
           <Route exact path="/" element={<Home />} />
