@@ -1,8 +1,9 @@
 import React from "react";
 // import { Route, Routes } from "react-router-dom";
-import { Provider } from "react-redux";
-import Counter from "./user/Counter/Counter";
-import { configstore } from "./Redux/store";
+// import { Provider } from "react-redux";
+// import Counter from "./user/Counter/Counter";
+// import { configstore } from "./Redux/store";
+import Create from "./component/Create";
 
 // import Home from "./user/Dom/Nested/Pages/Home";
 // import About from "./user/Dom/Nested/Pages/About";
@@ -11,13 +12,18 @@ import { configstore } from "./Redux/store";
 
 
 function App() {
-    const store = configstore()
+    // const store = configstore()
 
   return (
+  
   <>    
-        <Provider store={store}>
+{/* axios */}
+  <div className="container"> 
+    <Create />
+  </div>
+        {/* <Provider store={store}>
             <Counter />
-        </Provider>
+        </Provider> */}
 
      {/* <Counter /> */}
      

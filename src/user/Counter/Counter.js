@@ -26,13 +26,6 @@ function Counter(props) {
             <button onClick={handleDec}> - </button>
         </div>
 
-
-        // <div>
-        //     <h1> increment decrement </h1>
-        //     <button onclick={ () => dispatch(increment())}> + </button>
-        //     {0}
-        //     <button onclick={ () => dispatch(decrement())}> - </button>
-        // </div>
     );
 }
 
